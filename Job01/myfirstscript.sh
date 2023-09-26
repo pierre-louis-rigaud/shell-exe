@@ -1,1 +1,1 @@
-echo "i'm a script"
+echo "my first script"
