@@ -4,7 +4,7 @@
 backup_dir="Backup"
 
 #Crée le répertoire de sauvegard s'il n'existe pas
-mkdir -p "$backup_dir"
+#mkdir -p "$backup_dir"
 
 #Otient la date et l'heure
 date_format=$(date +'%d-%m-%Y-%H:%M')
