@@ -6,23 +6,23 @@ operateur="$2"
 nombre2="$3"
 
 #verifie les opération et le calcule
-case "$operateur" in
+case "$2" in
 	+)
-		resultat=$((nombre1 + nombre2))
+		resultat=$(($1 + $3))
 		;;
 	-)
-		resultat=$((nombre1 - nombre2))
+		resultat=$(($1 - $3))
 		;;
 	x)
-		resultat=$((nombre1 * nombre2))
+		resultat=$(($1 * $3))
 		;;
 	/)
 		#vérifie la division par zero
-		if ["$nombre2" -eq]; then
+		if ["$3" -eq]; then
 			echo "Erreur: division par zero."
 			exit 1
 		fi
-		resultat=$(awk "BEGIN {print $nombre1 / $nombre2}")
+		resultat=$(awk "BEGIN {print $1 / $3}")
 		;;
 	*)
 		echo "Opérateur non valide veuiller utilisez '+', '-', 'x', '/'."
@@ -31,4 +31,4 @@ case "$operateur" in
 esac
 
 #affiche le résultat
-echo "Le résultat de $nombre1 $operateur $nombre2 est : $resultat"
+echo "Le résultat de $1 $2 $3 est : $resultat"
