@@ -6,11 +6,11 @@ while IFP=, read -r username password userType
 do
 	useradd -m "$username"
 
-	if [ "$userType" == "admin" ]
+	if [ "$userType" == "Admin" ]
 	then
 		usermod -aG sudo "$username"
 	fi
 
-	echo "$username:$passwaord" | chpasswd
+	echo "$username:$password" | chpasswd
 
 done < "$CSV_FILE"
